@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: firstSpringBoot
+  datasource:
+    url: jdbc:mysql://localhost:3306/firstSpringBoot?createDatabaseIfNotExist=true
+    username: root
+    password: P@ssw0rd
+  jpa:
+    show-sql: true
+
