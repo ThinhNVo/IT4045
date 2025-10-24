@@ -7,8 +7,9 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
+@Builder
+@ToString
 @Table(name = "profiles")
 public class Profile {
     @Id
@@ -26,4 +27,12 @@ public class Profile {
 
     @Column(name = "loyality_points")
     private int loyaltyPoints;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    @MapsId
+    @ToString.Exclude
+    private User user;
+
+
 }

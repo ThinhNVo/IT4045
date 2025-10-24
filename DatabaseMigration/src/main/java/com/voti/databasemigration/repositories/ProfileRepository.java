@@ -1,4 +1,7 @@
 package com.voti.databasemigration.repositories;
 
-public interface ProfileRepository extends org.springframework.data.repository.CrudRepository<com.voti.databasemigration.entities.Profile, java.lang.Integer> {
-  }
+import com.voti.databasemigration.entities.Profile;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ProfileRepository extends CrudRepository<Profile, Integer> {
+}

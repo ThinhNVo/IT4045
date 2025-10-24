@@ -1,16 +1,14 @@
 package com.voti.databasemigration.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
+@Builder
+@ToString
 @Table(name = "addresses")
 public class Address {
     @Id
@@ -28,6 +26,13 @@ public class Address {
 
     @Column
     private String zip;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @ToString.Exclude
+    private User user;
+
+
 
 
 }
